@@ -1,0 +1,9 @@
+{
+    "apps": [
+        {
+            "name": "weedjam",
+            "script": "npm",
+            "args" : "run start"
+        }
+    ]
+}
