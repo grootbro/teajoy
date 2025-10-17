@@ -79,8 +79,8 @@ export default function ProductDetail({ product }: { product: Product }) {
     <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/icon.png" type="image/png" />
-        <title>weedjam shop🍯</title>
-        <meta name="description" content="weedjam co · Strain Catalog" />
+        <title>TeaJoy shop🍯</title>
+        <meta name="description" content="TeaJoy co · Strain Catalog" />
         <meta property="og:image" content="https://res.cloudinary.com/dov6nv91n/image/upload/v1725063333/cougsirqq9yhcqog2jel.png"/>
       </Head>
     <div>

@@ -1,7 +1,7 @@
 import "tailwindcss/tailwind.css";
 import "../app/globals.css";
 import Image from "next/image";
-import imgCompany from "@/public/assets/images/home003.png";
+import imgCompany from "@/public/assets/images/teajoy.png";
 import beans01 from "@/public/assets/images/beans01.png";
 import beans02 from "@/public/assets/images/beans02.jpg";
 import beans03 from "@/public/assets/images/beans03.png";
@@ -38,33 +38,33 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="flex flex-col gap-5 md:w-7/12 justify-between md:mt-0 mt-10">
-            <div className="relative md:px-2 slide-in-top dark:text-orange-50">
-              <p
-                className={`text-2xl 2xl:text-3xl active text-center md:text-justify font-light`}
-              >
-                {text.slideText}
-              </p>
-            </div>
-            <div className="relative md:px-2 slide-in-left dark:text-orange-50">
-              <p
-                className={`text-2xl 2xl:text-3xl active text-center md:text-justify font-light`}
-              >
-                {text.slideText}
-              </p>
-            </div>
-            <div className="flex flex-col gap-5 ">
+          <div className="flex flex-col md:w-7/12 justify-between md:mt-0 mt-10">
+            <div>
+              <div className="relative md:px-2 slide-in-top dark:text-orange-50 mb-5">
+                <p
+                  className={`text-2xl 2xl:text-3xl active text-center md:text-justify font-light`}
+                >
+                  {text.slideText}
+                </p>
+              </div>
+              <div className="relative md:px-2 slide-in-left dark:text-orange-50 mb-8">
+                <p
+                  className={`text-2xl 2xl:text-3xl active text-center md:text-justify font-light`}
+                >
+                  {text.slideText}
+                </p>
+              </div>
               <div
-                className="flex flex-row gap-5 justify-around  ml-auto mr-auto align-bottom w-11/12"
+                className="flex flex-row gap-3 justify-center ml-auto mr-auto items-stretch w-full pt-16"
                 id="bean-boxes"
               >
-                <Link href="/shop/3" className="w-1/3">
-                  <div className="relative overflow-hidden rounded-xl">
-                    <div className="group">
+                <Link href="/shop/3" className="w-1/3 flex">
+                  <div className="relative overflow-hidden rounded-xl flex-1">
+                    <div className="group h-full">
                       <Image
                         src={beans01}
                         alt="Image"
-                        className="shadow-lg opacity-80 group-hover:opacity-100 group-hover:scale-105 duration-500 transition-[transform, shadow]"
+                        className="shadow-lg opacity-80 group-hover:opacity-100 group-hover:scale-105 duration-500 transition-[transform, shadow] h-full object-cover"
                       />
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         <p className="text-yellow-100 text-4xl">
@@ -74,13 +74,13 @@ export default function Home() {
                     </div>
                   </div>
                 </Link>
-                <Link href="/shop/1" className="w-1/3">
-                  <div className="relative overflow-hidden rounded-xl">
-                    <div className="group">
+                <Link href="/shop/1" className="w-1/3 flex">
+                  <div className="relative overflow-hidden rounded-xl flex-1">
+                    <div className="group h-full">
                       <Image
                         src={beans02}
                         alt="Image"
-                        className="shadow-lg opacity-80 group-hover:opacity-100 group-hover:scale-105 duration-500 transition-[transform, shadow]"
+                        className="shadow-lg opacity-80 group-hover:opacity-100 group-hover:scale-105 duration-500 transition-[transform, shadow] h-full object-cover"
                       />
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         <p className="text-yellow-100 text-4xl">
@@ -90,13 +90,13 @@ export default function Home() {
                     </div>
                   </div>
                 </Link>
-                <Link href="/shop/5" className="w-1/3">
-                  <div className="relative overflow-hidden rounded-xl">
-                    <div className="group">
+                <Link href="/shop/5" className="w-1/3 flex">
+                  <div className="relative overflow-hidden rounded-xl flex-1">
+                    <div className="group h-full">
                       <Image
                         src={beans03}
                         alt="Image"
-                        className="shadow-lg opacity-80 group-hover:opacity-100 group-hover:scale-105 duration-500 transition-[transform, shadow]"
+                        className="shadow-lg opacity-80 group-hover:opacity-100 group-hover:scale-105 duration-500 transition-[transform, shadow] h-full object-cover"
                       />
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         <p className="text-yellow-100 text-4xl">{text.peru}</p>
@@ -105,7 +105,8 @@ export default function Home() {
                   </div>
                 </Link>
               </div>
-              <Link href="/shop" className="ml-auto mr-auto">
+            </div>
+            <Link href="/shop" className="ml-auto mr-auto">
                 <div
                   id="main-button"
                   className="border-[1px] border-neutral-400 rounded-xl items-center bg-neutral-50 dark:bg-stone-300 px-5 
@@ -113,8 +114,7 @@ export default function Home() {
                 >
                   <p className="text-lg">{text.beansButton}</p>
                 </div>
-              </Link>
-            </div>
+            </Link>
           </div>
         </div>
         <div className="mt-10 text-center ml-auto mr-auto md:w-2/3 mb-5 ">

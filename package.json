@@ -1,9 +1,9 @@
 {
-  "name": "weedjamco",
+  "name": "teashop",
   "version": "0.3.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --port 3030",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

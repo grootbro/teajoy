@@ -4,8 +4,8 @@ import { LanguageContext } from "../contexts/LanguageContext";
 import "tailwindcss/tailwind.css";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "@/public/assets/images/logo001.png";
-import logo2 from "@/public/assets/images/logo002.png";
+import logo from "@/public/assets/images/joytea.webp";
+import logo2 from "@/public/assets/images/joytea.webp";
 import leaf from "@/public/assets/images/leaf2.png";
 import cartIcon from "@/public/assets/images/cart.png";
 import cartIcon2 from "@/public/assets/images/cart2.png";
@@ -17,7 +17,7 @@ export default function Navbar() {
   const { cart } = useContext(CartContext) || { cart: [] };
   const isCartEmpty = cart ? cart.length === 0 : true;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDark, setisDark] = useState(false);
+  const [isDark, setisDark] = useState(true);
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -47,12 +47,15 @@ export default function Navbar() {
   };
 
   const menuRef = useRef<HTMLDivElement | null>(null);
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
         menuRef.current &&
         !menuRef.current.contains(event.target as Node) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target as Node) &&
         isMenuOpen
       ) {
         closeMenu();
@@ -74,100 +77,39 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="mb-24 text-xl max-w-screen flex flex-wrap items-center justify-between mx-auto py-2">
-        {/* LOGO AND LANGUAGE & DARK MODE */}
-        <div className="flex flex-row gap-3 md:gap-7 lg:gap-10 mt-1">
-          <div className="mt-1">
+      <div className="mb-4 md:mb-24 text-xl max-w-screen flex flex-wrap items-center justify-between mx-auto py-2">
+        {/* LOGO AND TEA JOY TEXT */}
+        <div className="flex flex-row items-center gap-3 mt-1">
+          <Link href="/" className="flex items-center">
             {isDark ? (
-              <Link href="/">
-                <Image
-                  src={logo2}
-                  alt="logo"
-                  className="h-30 w-40 mb-auto mt-1"
-                />
-              </Link>
+              <Image
+                src={logo2}
+                alt="logo"
+                width={64}
+                height={64}
+                className="object-contain"
+              />
             ) : (
-              <Link href="/">
-                <Image
-                  src={logo}
-                  alt="logo"
-                  className="h-30 w-40 mb-auto mt-1"
-                />
-              </Link>
+              <Image
+                src={logo}
+                alt="logo"
+                width={64}
+                height={64}
+                className="object-contain"
+              />
             )}
-          </div>
-          {/* LANGUAGE AND DARK MODE */}
-          <div className="flex flex-row gap-3 mt-2">
-            {/* LANGUAGE */}
-            <div className="language-dropdown w-10 h-8 mt-3 flex-row">
-              <div className="selected-language" onClick={toggleDropdown}>
-                <img
-                  src={flag}
-                  alt={language}
-                  className="flag w-6 h-4 mb-2 cursor-pointer ml-[7.5px]"
-                />
-              </div>
-              {isDropdownOpen && (
-                <div className="dropdown-options border-[1px] rounded-lg border-neutral-400 bg-orange-50 p-1">
-                  <div
-                    className={`option ${language === "en" ? "selected" : ""}`}
-                    onClick={() => handleLanguageChange("en")}
-                  >
-                    <img
-                      src={
-                        "https://res.cloudinary.com/dov6nv91n/image/upload/v1725046378/uotz4byg4gmnrvd2dc8n.jpg"
-                      }
-                      alt="en"
-                      className="flag hover:bg-neutral-300 rounded-md p-1 cursor-pointer"
-                    />
-                  </div>
-                  <div
-                    className={`option ${language === "de" ? "selected" : ""}`}
-                    onClick={() => handleLanguageChange("de")}
-                  >
-                    <img
-                      src="https://res.cloudinary.com/dov6nv91n/image/upload/v1725046413/hyt7twgjvsphu8n8ttkj.jpg"
-                      alt="ru"
-                      className="flag hover:bg-neutral-300 rounded-md p-1 cursor-pointer"
-                    />
-                  </div>
-                  <div
-                    className={`option ${language === "tr" ? "selected" : ""}`}
-                    onClick={() => handleLanguageChange("tr")}
-                  >
-                    <img
-                      src="https://res.cloudinary.com/dov6nv91n/image/upload/v1725045522/wk7bqinl964ctegvdl8x.png"
-                      alt="th"
-                      className="flag hover:bg-neutral-300 rounded-md p-1 cursor-pointer"
-                    />
-                  </div>
-                </div>
-              )}
-            </div>
-            {/* DARK MODE */}
-            <div className="mt-2">
-              {isDark ? (
-                <HiSun
-                  alt="Sun"
-                  onClick={handleModeClick}
-                  className="w-6 h-6 cursor-pointer mb-2 md:mb-1 dark:text-orange-50"
-                />
-              ) : (
-                <HiMoon
-                  alt="Moon"
-                  onClick={handleModeClick}
-                  className="w-6 h-6 cursor-pointer mb-2 md:mb-1 text-neutral-700"
-                />
-              )}
-            </div>
-          </div>
+          </Link>
+          <Link href="/" className="text-xl text-neutral-700 dark:text-orange-50 hover:text-stone-600 dark:hover:text-neutral-300 mt-2">
+            Tea Joy
+          </Link>
         </div>
 
         <button
+          ref={buttonRef}
           onClick={toggleMenu}
           type="button"
           className="inline-flex items-center p-2 w-12 h-12 justify-center text-sm text-neutral-800 dark:text-neutral-50
-            rounded-xl md:hidden focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:bg-neutral-50 
+            rounded-xl md:hidden focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:bg-neutral-50
             focus:bg-opacity-40 mt-3"
           aria-controls="navbar-default"
           aria-expanded={isMenuOpen ? "true" : "false"}
@@ -192,48 +134,117 @@ export default function Navbar() {
         {/* MENU TITLES */}
         <div
           ref={menuRef}
-          className={`my-auto w-full md:block md:w-auto ${
-            isMenuOpen ? "block" : "hidden"
+          className={`my-auto w-full md:w-auto ${
+            isMenuOpen ? "block" : "hidden md:block"
           }`}
           id="navbar-default"
         >
           <ul
-            className="flex flex-col p-4 md:p-0 mt-3 md:flex-row 
-          lg:space-x-8 space-x-3 items-center dark:text-orange-50"
+            className="flex flex-col p-3 md:p-0 mt-3 md:flex-row md:space-y-0 space-y-2
+          lg:space-x-8 md:space-x-4 items-center dark:text-orange-50 bg-neutral-100 dark:bg-neutral-800 md:bg-transparent md:dark:bg-transparent rounded-lg md:rounded-none"
           >
-            <div>
+            {/* THEME AND LANGUAGE SWITCHERS (Mobile: horizontal at bottom, Desktop: normal) */}
+            <div className="flex flex-row gap-4 items-center md:contents order-last md:order-none">
+              {/* LANGUAGE */}
+              <div className="language-dropdown flex items-center md:order-1 md:mb-0.5">
+                <div className="selected-language flex items-center" onClick={toggleDropdown}>
+                  <img
+                    src={flag}
+                    alt={language}
+                    className="flag w-6 h-4 cursor-pointer object-contain"
+                  />
+                </div>
+                {isDropdownOpen && (
+                  <div className="dropdown-options absolute mt-2 border-[1px] rounded-lg border-neutral-400 dark:border-neutral-600 bg-orange-50 dark:bg-neutral-800 p-1 z-50 flex flex-col gap-1">
+                    <div
+                      className={`option hover:bg-neutral-300 dark:hover:bg-neutral-600 rounded-md cursor-pointer ${language === "en" ? "selected" : ""}`}
+                      onClick={() => handleLanguageChange("en")}
+                    >
+                      <img
+                        src={
+                          "https://res.cloudinary.com/dov6nv91n/image/upload/v1725046378/uotz4byg4gmnrvd2dc8n.jpg"
+                        }
+                        alt="en"
+                        className="flag w-8 h-5 object-cover select-none rounded-sm"
+                      />
+                    </div>
+                    <div
+                      className={`option hover:bg-neutral-300 dark:hover:bg-neutral-600 rounded-md cursor-pointer ${language === "de" ? "selected" : ""}`}
+                      onClick={() => handleLanguageChange("de")}
+                    >
+                      <img
+                        src="https://res.cloudinary.com/dov6nv91n/image/upload/v1725046413/hyt7twgjvsphu8n8ttkj.jpg"
+                        alt="ru"
+                        className="flag w-8 h-5 object-cover select-none rounded-sm"
+                      />
+                    </div>
+                    <div
+                      className={`option hover:bg-neutral-300 dark:hover:bg-neutral-600 rounded-md cursor-pointer ${language === "tr" ? "selected" : ""}`}
+                      onClick={() => handleLanguageChange("tr")}
+                    >
+                      <img
+                        src="https://res.cloudinary.com/dov6nv91n/image/upload/v1725045522/wk7bqinl964ctegvdl8x.png"
+                        alt="th"
+                        className="flag w-8 h-5 object-cover select-none rounded-sm"
+                      />
+                    </div>
+                  </div>
+                )}
+              </div>
+              {/* DARK MODE */}
+              <div className="md:order-7 md:ml-4">
+                {isDark ? (
+                  <HiSun
+                    alt="Sun"
+                    onClick={handleModeClick}
+                    className="w-6 h-6 cursor-pointer text-orange-50"
+                  />
+                ) : (
+                  <HiMoon
+                    alt="Moon"
+                    onClick={handleModeClick}
+                    className="w-6 h-6 cursor-pointer text-neutral-700"
+                  />
+                )}
+              </div>
+            </div>
+            <div className="md:order-3 order-1">
               <Link
                 href="/"
-                className="block py-2 pl-3 pr-4 md:border-0 md:p-0 hover:text-stone-600 dark:hover:text-neutral-300"
+                onClick={() => setIsMenuOpen(false)}
+                className="block py-1 px-3 md:border-0 md:p-0 hover:text-stone-600 dark:hover:text-neutral-300"
               >
                 {text.home}
               </Link>
             </div>
-            <div className="md:border-0 md:p-0 hover:text-stone-600 dark:hover:text-neutral-300">
+            <div className="md:border-0 md:p-0 hover:text-stone-600 dark:hover:text-neutral-300 md:order-4 order-2">
               <hr className="border-1 border-lime-900 dark:border-lime-200 md:border-0" />
               <Link
                 href="/policy"
-                className=" py-2 pl-3 pr-4 hover:text-stone-600 dark:hover:text-neutral-300 flex flex-row "
+                onClick={() => setIsMenuOpen(false)}
+                className="py-1 px-3 md:p-0 hover:text-stone-600 dark:hover:text-neutral-300 flex flex-row gap-1"
               >
                 {text.threeF}
                 <Image src={leaf} alt="Leaf" className="w-6 h-6" />
               </Link>
             </div>
-            <div>
+            <div className="md:order-5 order-3">
               <hr className="border-1 border-lime-900 dark:border-lime-200 md:border-0" />
               <Link
                 href="/shop"
-                className="block py-2 pl-3 pr-4 md:border-0 md:p-0 hover:text-stone-600 dark:hover:text-neutral-300"
+                onClick={() => setIsMenuOpen(false)}
+                className="block py-1 px-3 md:border-0 md:p-0 hover:text-stone-600 dark:hover:text-neutral-300"
               >
                 {text.shop}
               </Link>
             </div>
-            <div>
+            <div className="md:order-6 order-4">
               <hr className="border-1 border-lime-900 dark:border-lime-200 md:border-0" />
               {isCartEmpty ? (
                 <Link
                   href="/cart"
-                  className="block py-2 pl-3 pr-4 md:border-0 md:p-0 hover:text-stone-600 dark:hover:text-neutral-300"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block py-1 px-3 md:border-0 md:p-0 hover:text-stone-600 dark:hover:text-neutral-300"
                 >
                   {isDark ? (
                     <Image src={cartIcon2} alt="Cart" className="w-6 h-6" />
@@ -244,7 +255,8 @@ export default function Navbar() {
               ) : (
                 <Link
                   href="/cart"
-                  className="relative block py-2 pl-3 pr-4 mt-1.5 md:border-0 md:p-0 hover:text-stone-600 dark:hover:text-neutral-300"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="relative block py-1 px-3 md:border-0 md:p-0 hover:text-stone-600 dark:hover:text-neutral-300"
                 >
                   <div className="relative inline-block">
                     {isDark ? (
