@@ -4,8 +4,8 @@ import { Language } from "../types";
 
 export const LanguageContext = createContext<{
   text: Record<string, string>;
-  language: "en" | "de" | "tr";
-  handleChangeLanguage: (language: "en" | "de" | "tr") => void;
+  language: "en" | "ru" | "th";
+  handleChangeLanguage: (language: "en" | "ru" | "th") => void;
   flag: string;
   setFlag: React.Dispatch<React.SetStateAction<string>>;
 }>({
@@ -34,21 +34,24 @@ export const LanguageProvider = ({
         setFlag(
           "https://res.cloudinary.com/dov6nv91n/image/upload/v1725046378/uotz4byg4gmnrvd2dc8n.jpg"
         );
+        localStorage.setItem("language", "en");
         break;
       }
-      case "de":
-        setLanguage("de");
-        setText(translations.de);
+      case "ru":
+        setLanguage("ru");
+        setText(translations.ru);
         setFlag(
           "https://res.cloudinary.com/dov6nv91n/image/upload/v1725046413/hyt7twgjvsphu8n8ttkj.jpg"
         );
+        localStorage.setItem("language", "ru");
         break;
-      case "tr": {
-        setLanguage("tr");
-        setText(translations.tr);
+      case "th": {
+        setLanguage("th");
+        setText(translations.th);
         setFlag(
           "https://res.cloudinary.com/dov6nv91n/image/upload/v1725045522/wk7bqinl964ctegvdl8x.png"
         );
+        localStorage.setItem("language", "th");
         break;
       }
 
@@ -68,19 +71,19 @@ export const LanguageProvider = ({
         );
         break;
 
-      case "de":
-        setLanguage("de");
-        setText(translations.de);
-        setCountry("Germany");
+      case "ru":
+        setLanguage("ru");
+        setText(translations.ru);
+        setCountry("Russia");
         setFlag(
           "https://res.cloudinary.com/dov6nv91n/image/upload/v1725046413/hyt7twgjvsphu8n8ttkj.jpg"
         );
         break;
 
-      case "tr":
-        setLanguage("tr");
-        setText(translations.tr);
-        setCountry("Turkey");
+      case "th":
+        setLanguage("th");
+        setText(translations.th);
+        setCountry("Thailand");
         setFlag(
           "https://res.cloudinary.com/dov6nv91n/image/upload/v1725045522/wk7bqinl964ctegvdl8x.png"
         );
@@ -97,7 +100,12 @@ export const LanguageProvider = ({
   };
 
   useEffect(() => {
-    getBrowserLanguage();
+    const savedLanguage = localStorage.getItem("language") as Language | null;
+    if (savedLanguage && (savedLanguage === "en" || savedLanguage === "ru" || savedLanguage === "th")) {
+      handleChangeLanguage(savedLanguage);
+    } else {
+      getBrowserLanguage();
+    }
   }, []);
 
   const data = { text, language, handleChangeLanguage, flag, setFlag };

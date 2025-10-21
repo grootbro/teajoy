@@ -77,29 +77,34 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="mb-4 md:mb-24 text-xl max-w-screen flex flex-wrap items-center justify-between mx-auto py-2">
+      <div className="text-lg max-w-screen flex flex-wrap items-center justify-between mx-auto relative">
         {/* LOGO AND TEA JOY TEXT */}
-        <div className="flex flex-row items-center gap-3 mt-1">
-          <Link href="/" className="flex items-center">
-            {isDark ? (
-              <Image
-                src={logo2}
-                alt="logo"
-                width={64}
-                height={64}
-                className="object-contain"
-              />
-            ) : (
-              <Image
-                src={logo}
-                alt="logo"
-                width={64}
-                height={64}
-                className="object-contain"
-              />
-            )}
-          </Link>
-          <Link href="/" className="text-xl text-neutral-700 dark:text-orange-50 hover:text-stone-600 dark:hover:text-neutral-300 mt-2">
+        <Link href="/" className="flex items-center gap-2">
+          {isDark ? (
+            <Image
+              src={logo2}
+              alt="logo"
+              width={48}
+              height={48}
+              className="object-contain"
+            />
+          ) : (
+            <Image
+              src={logo}
+              alt="logo"
+              width={48}
+              height={48}
+              className="object-contain"
+            />
+          )}
+          <span className="hidden md:inline text-2xl font-medium text-neutral-700 dark:text-orange-50 hover:text-stone-600 dark:hover:text-neutral-300 translate-y-1">
+            Tea Joy
+          </span>
+        </Link>
+
+        {/* Mobile centered title - fixed position */}
+        <div className="md:hidden fixed left-1/2 transform -translate-x-1/2 pointer-events-none translate-y-1" style={{top: 'var(--header-top, 1.5rem)'}}>
+          <Link href="/" className="text-2xl font-medium text-neutral-700 dark:text-orange-50 pointer-events-auto">
             Tea Joy
           </Link>
         </div>
@@ -110,7 +115,7 @@ export default function Navbar() {
           type="button"
           className="inline-flex items-center p-2 w-12 h-12 justify-center text-sm text-neutral-800 dark:text-neutral-50
             rounded-xl md:hidden focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:bg-neutral-50
-            focus:bg-opacity-40 mt-3"
+            focus:bg-opacity-40"
           aria-controls="navbar-default"
           aria-expanded={isMenuOpen ? "true" : "false"}
         >
@@ -134,7 +139,7 @@ export default function Navbar() {
         {/* MENU TITLES */}
         <div
           ref={menuRef}
-          className={`my-auto w-full md:w-auto ${
+          className={`w-full md:w-auto ${
             isMenuOpen ? "block" : "hidden md:block"
           }`}
           id="navbar-default"
@@ -144,7 +149,7 @@ export default function Navbar() {
           lg:space-x-8 md:space-x-4 items-center dark:text-orange-50 bg-neutral-100 dark:bg-neutral-800 md:bg-transparent md:dark:bg-transparent rounded-lg md:rounded-none"
           >
             {/* THEME AND LANGUAGE SWITCHERS (Mobile: horizontal at bottom, Desktop: normal) */}
-            <div className="flex flex-row gap-4 items-center md:contents order-last md:order-none">
+            <div className="flex flex-row gap-4 items-center md:contents order-last md:order-none mt-3 md:mt-0">
               {/* LANGUAGE */}
               <div className="language-dropdown flex items-center md:order-1 md:mb-0.5">
                 <div className="selected-language flex items-center" onClick={toggleDropdown}>
@@ -169,8 +174,8 @@ export default function Navbar() {
                       />
                     </div>
                     <div
-                      className={`option hover:bg-neutral-300 dark:hover:bg-neutral-600 rounded-md cursor-pointer ${language === "de" ? "selected" : ""}`}
-                      onClick={() => handleLanguageChange("de")}
+                      className={`option hover:bg-neutral-300 dark:hover:bg-neutral-600 rounded-md cursor-pointer ${language === "ru" ? "selected" : ""}`}
+                      onClick={() => handleLanguageChange("ru")}
                     >
                       <img
                         src="https://res.cloudinary.com/dov6nv91n/image/upload/v1725046413/hyt7twgjvsphu8n8ttkj.jpg"
@@ -179,8 +184,8 @@ export default function Navbar() {
                       />
                     </div>
                     <div
-                      className={`option hover:bg-neutral-300 dark:hover:bg-neutral-600 rounded-md cursor-pointer ${language === "tr" ? "selected" : ""}`}
-                      onClick={() => handleLanguageChange("tr")}
+                      className={`option hover:bg-neutral-300 dark:hover:bg-neutral-600 rounded-md cursor-pointer ${language === "th" ? "selected" : ""}`}
+                      onClick={() => handleLanguageChange("th")}
                     >
                       <img
                         src="https://res.cloudinary.com/dov6nv91n/image/upload/v1725045522/wk7bqinl964ctegvdl8x.png"
@@ -218,7 +223,6 @@ export default function Navbar() {
               </Link>
             </div>
             <div className="md:border-0 md:p-0 hover:text-stone-600 dark:hover:text-neutral-300 md:order-4 order-2">
-              <hr className="border-1 border-lime-900 dark:border-lime-200 md:border-0" />
               <Link
                 href="/policy"
                 onClick={() => setIsMenuOpen(false)}
@@ -227,9 +231,9 @@ export default function Navbar() {
                 {text.threeF}
                 <Image src={leaf} alt="Leaf" className="w-6 h-6" />
               </Link>
+              <hr className="border-1 border-lime-900 dark:border-lime-200 md:border-0 mt-1" />
             </div>
             <div className="md:order-5 order-3">
-              <hr className="border-1 border-lime-900 dark:border-lime-200 md:border-0" />
               <Link
                 href="/shop"
                 onClick={() => setIsMenuOpen(false)}
@@ -237,9 +241,9 @@ export default function Navbar() {
               >
                 {text.shop}
               </Link>
+              <hr className="border-1 border-lime-900 dark:border-lime-200 md:border-0 mt-1" />
             </div>
             <div className="md:order-6 order-4">
-              <hr className="border-1 border-lime-900 dark:border-lime-200 md:border-0" />
               {isCartEmpty ? (
                 <Link
                   href="/cart"
@@ -273,6 +277,7 @@ export default function Navbar() {
                   </div>
                 </Link>
               )}
+              <hr className="border-1 border-lime-900 dark:border-lime-200 md:border-0 mt-1" />
             </div>
           </ul>
         </div>

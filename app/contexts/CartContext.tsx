@@ -1,4 +1,4 @@
-import React, { createContext, useState, ReactNode } from "react";
+import React, { createContext, useState, ReactNode, useEffect } from "react";
 import { CartContextType, Product } from "../types";
 
 export const CartContext = createContext<CartContextType | undefined>(
@@ -10,7 +10,19 @@ interface CartProviderProps {
 }
 
 export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
-  const [cart, setCart] = useState<Product[]>([]);
+  const [cart, setCart] = useState<Product[]>(() => {
+    if (typeof window !== 'undefined') {
+      const savedCart = localStorage.getItem('teajoy-cart');
+      return savedCart ? JSON.parse(savedCart) : [];
+    }
+    return [];
+  });
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('teajoy-cart', JSON.stringify(cart));
+    }
+  }, [cart]);
 
   // ADDING ITEMS TO CART BY ONE
   const addToCart = (productToAdd: Product) => {

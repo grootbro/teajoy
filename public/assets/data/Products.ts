@@ -5,8 +5,8 @@ export const products: Product[] = [
     id: 1,
     name: {
       en: "'Sugar Baby' – Sensi seeds",
-      de: "'Sugar Baby' – Sensi seeds",
-      tr: "'Sugar Baby' – Sensi seeds",
+      ru: "'Sugar Baby' – Sensi seeds",
+      th: "'Sugar Baby' – Sensi seeds",
     },
     gr: 10,
     img: "https://res.cloudinary.com/dov6nv91n/image/upload/v1725040838/Untitled_11_dm1u2y.png",
@@ -15,16 +15,16 @@ export const products: Product[] = [
     qty: 0,
     text: {
       en: "Sugar Baby, not to be confused with the like-named “Sugar Babe,” is an indica dominant hybrid strain created as a descendant of Mount Cook X an unknown ruderalis strain. This delicious baby has one of the most sweet and sugary flavors you'll ever get the opportunity to taste – just one toke and you'll be in love. The aroma is just as sweet, although with a touch of mellow florals and rich earth to it. The Sugar Baby high is the perfect highly medicinal stone that hits both mind and body with a high level of potency. You'll feel it creep up on you slowly, spreading from your spine throughout the rest of your body in soothing waves, lulling you into a state of pure relaxation and ease.",
-      de: "Sugar Baby, not to be confused with the like-named “Sugar Babe,” is an indica dominant hybrid strain created as a descendant of Mount Cook X an unknown ruderalis strain. This delicious baby has one of the most sweet and sugary flavors you'll ever get the opportunity to taste – just one toke and you'll be in love. The aroma is just as sweet, although with a touch of mellow florals and rich earth to it. The Sugar Baby high is the perfect highly medicinal stone that hits both mind and body with a high level of potency. You'll feel it creep up on you slowly, spreading from your spine throughout the rest of your body in soothing waves, lulling you into a state of pure relaxation and ease.",
-      tr: "Sugar Baby, not to be confused with the like-named “Sugar Babe,” is an indica dominant hybrid strain created as a descendant of Mount Cook X an unknown ruderalis strain. This delicious baby has one of the most sweet and sugary flavors you'll ever get the opportunity to taste – just one toke and you'll be in love. The aroma is just as sweet, although with a touch of mellow florals and rich earth to it. The Sugar Baby high is the perfect highly medicinal stone that hits both mind and body with a high level of potency. You'll feel it creep up on you slowly, spreading from your spine throughout the rest of your body in soothing waves, lulling you into a state of pure relaxation and ease.",
+      ru: "Sugar Baby, not to be confused with the like-named “Sugar Babe,” is an indica dominant hybrid strain created as a descendant of Mount Cook X an unknown ruderalis strain. This delicious baby has one of the most sweet and sugary flavors you'll ever get the opportunity to taste – just one toke and you'll be in love. The aroma is just as sweet, although with a touch of mellow florals and rich earth to it. The Sugar Baby high is the perfect highly medicinal stone that hits both mind and body with a high level of potency. You'll feel it creep up on you slowly, spreading from your spine throughout the rest of your body in soothing waves, lulling you into a state of pure relaxation and ease.",
+      th: "Sugar Baby, not to be confused with the like-named “Sugar Babe,” is an indica dominant hybrid strain created as a descendant of Mount Cook X an unknown ruderalis strain. This delicious baby has one of the most sweet and sugary flavors you'll ever get the opportunity to taste – just one toke and you'll be in love. The aroma is just as sweet, although with a touch of mellow florals and rich earth to it. The Sugar Baby high is the perfect highly medicinal stone that hits both mind and body with a high level of potency. You'll feel it creep up on you slowly, spreading from your spine throughout the rest of your body in soothing waves, lulling you into a state of pure relaxation and ease.",
     },
   },
   {
     id: 3,
     name: {
       en: "'Cherry Buff' – Zen Seeds",
-      de: "'Cherry Buff' – Zen Seeds",
-      tr: "'Cherry Buff' – Zen Seeds",
+      ru: "'Cherry Buff' – Zen Seeds",
+      th: "'Cherry Buff' – Zen Seeds",
     },
     gr: 10,
     img: "https://res.cloudinary.com/dov6nv91n/image/upload/v1725057218/kjsvrtcqnqkwlb9o5mwt.png",
@@ -33,16 +33,16 @@ export const products: Product[] = [
     qty: 0,
     text: {
       en: "The Super Cherry Buff strain is a hybrid that has high levels of cannabinoids, including THC and CBD. This variety is known for its fruity aromas and flavors, giving it a unique profile. Our Super Cherry Buff buds is recognized as champion of people best choice.",
-      de: "The Super Cherry Buff strain is a hybrid that has high levels of cannabinoids, including THC and CBD. This variety is known for its fruity aromas and flavors, giving it a unique profile. Our Super Cherry Buff buds is recognized as champion of people best choice.",
-      tr: "The Super Cherry Buff strain is a hybrid that has high levels of cannabinoids, including THC and CBD. This variety is known for its fruity aromas and flavors, giving it a unique profile. Our Super Cherry Buff buds is recognized as champion of people best choice.",
+      ru: "The Super Cherry Buff strain is a hybrid that has high levels of cannabinoids, including THC and CBD. This variety is known for its fruity aromas and flavors, giving it a unique profile. Our Super Cherry Buff buds is recognized as champion of people best choice.",
+      th: "The Super Cherry Buff strain is a hybrid that has high levels of cannabinoids, including THC and CBD. This variety is known for its fruity aromas and flavors, giving it a unique profile. Our Super Cherry Buff buds is recognized as champion of people best choice.",
     },
    },
    {
     id: 5,
     name: {
       en: "'Sweet & Slow' – Exotic strains",
-      de: "'Sweet & Slow' – Exotic strains",
-      tr: "'Sweet & Slow' – Exotic strains",
+      ru: "'Sweet & Slow' – Exotic strains",
+      th: "'Sweet & Slow' – Exotic strains",
     },
     gr: 10,
     img: "https://res.cloudinary.com/dov6nv91n/image/upload/v1725041190/Untitled_12_vcsn3d.png",
@@ -51,16 +51,16 @@ export const products: Product[] = [
     qty: 0,
     text: {
       en: "Slow N Sweet is a hybrid weed strain made from a genetic cross between Runtz and Sundae Driver. This strain is 50% sativa and 50% indica. Slow N Sweet is 29% THC, making this strain an ideal choice for experienced cannabis consumers. Ninjabuds customers tell us Slow N Sweet effects include feeling relaxed, happy, and euphoric. Medical marijuana patients often choose Slow N Sweet when dealing with symptoms associated with stress, insomnia, and pain. Bred by Cresco, Slow N Sweet features flavors like sweet, creamy chocolate, sugary fruit. The dominant terpene of this strain is myrcene, which contributes to its sedating and anti-inflammatory properties.",
-      de: "Slow N Sweet is a hybrid weed strain made from a genetic cross between Runtz and Sundae Driver. This strain is 50% sativa and 50% indica. Slow N Sweet is 29% THC, making this strain an ideal choice for experienced cannabis consumers. Ninjabuds customers tell us Slow N Sweet effects include feeling relaxed, happy, and euphoric. Medical marijuana patients often choose Slow N Sweet when dealing with symptoms associated with stress, insomnia, and pain. Bred by Cresco, Slow N Sweet features flavors like sweet, creamy chocolate, sugary fruit. The dominant terpene of this strain is myrcene, which contributes to its sedating and anti-inflammatory properties.",
-      tr: "Slow N Sweet is a hybrid weed strain made from a genetic cross between Runtz and Sundae Driver. This strain is 50% sativa and 50% indica. Slow N Sweet is 29% THC, making this strain an ideal choice for experienced cannabis consumers. Ninjabuds customers tell us Slow N Sweet effects include feeling relaxed, happy, and euphoric. Medical marijuana patients often choose Slow N Sweet when dealing with symptoms associated with stress, insomnia, and pain. Bred by Cresco, Slow N Sweet features flavors like sweet, creamy chocolate, sugary fruit. The dominant terpene of this strain is myrcene, which contributes to its sedating and anti-inflammatory properties.",
+      ru: "Slow N Sweet is a hybrid weed strain made from a genetic cross between Runtz and Sundae Driver. This strain is 50% sativa and 50% indica. Slow N Sweet is 29% THC, making this strain an ideal choice for experienced cannabis consumers. Ninjabuds customers tell us Slow N Sweet effects include feeling relaxed, happy, and euphoric. Medical marijuana patients often choose Slow N Sweet when dealing with symptoms associated with stress, insomnia, and pain. Bred by Cresco, Slow N Sweet features flavors like sweet, creamy chocolate, sugary fruit. The dominant terpene of this strain is myrcene, which contributes to its sedating and anti-inflammatory properties.",
+      th: "Slow N Sweet is a hybrid weed strain made from a genetic cross between Runtz and Sundae Driver. This strain is 50% sativa and 50% indica. Slow N Sweet is 29% THC, making this strain an ideal choice for experienced cannabis consumers. Ninjabuds customers tell us Slow N Sweet effects include feeling relaxed, happy, and euphoric. Medical marijuana patients often choose Slow N Sweet when dealing with symptoms associated with stress, insomnia, and pain. Bred by Cresco, Slow N Sweet features flavors like sweet, creamy chocolate, sugary fruit. The dominant terpene of this strain is myrcene, which contributes to its sedating and anti-inflammatory properties.",
     },
   },
   // {
   //   id: 4,
   //   name: {
   //     en: "'Ancient Forest' – Honduras",
-  //     de: "'Ancient Forest' – Honduras",
-  //     tr: "'Ancient Forest' – Honduras",
+  //     ru: "'Ancient Forest' – Honduras",
+  //     th: "'Ancient Forest' – Honduras",
   //   },
   //   gr: 250,
   //   img: "https://res.cloudinary.com/djlyhp6vr/image/upload/v1694545733/pack03-removebg-preview_vlsddd.png",
@@ -69,16 +69,16 @@ export const products: Product[] = [
   //   qty: 0,
   //   text: {
   //     en: "Discover tranquility in a cup with our Ancient Forest blend, originating from the thick rainforests of Honduras. This coffee offers a unique combination of spiciness and earthiness, creating a harmonious blend that soothes the soul. It's a true peace stop of flavor amidst the chaos of your day.",
-  //     de: "Entdecken Sie die Ruhe in einer Tasse mit unserer Ancient Forest, die aus den dichten Regenwäldern von Honduras stammt. Dieser Kaffee bietet eine einzigartige Kombination aus Schärfe und Erdigkeit, die eine harmonische Mischung ergibt, die die Seele beruhigt. Er ist ein wahrer Ruhepol inmitten des täglichen Chaos.",
-  //     tr: "Honduras'ın sık yağmur ormanlarından gelen Ancient Forest ile tek bir fincanda huzuru keşfedin. Bu kahve, baharat ve topraksı aromaların  eşsiz bir kombinasyonunu sunarak ruhunuzu dinlendiren ahenkli bir birleşim oluşturur. Gündelik hayatın koşturmasında gerçek bir huzur durağıdır.",
+  //     ru: "Entdecken Sie die Ruhe in einer Tasse mit unserer Ancient Forest, die aus den dichten Regenwäldern von Honduras stammt. Dieser Kaffee bietet eine einzigartige Kombination aus Schärfe und Erdigkeit, die eine harmonische Mischung ergibt, die die Seele beruhigt. Er ist ein wahrer Ruhepol inmitten des täglichen Chaos.",
+  //     th: "Honduras'ın sık yağmur ormanlarından gelen Ancient Forest ile tek bir fincanda huzuru keşfedin. Bu kahve, baharat ve topraksı aromaların  eşsiz bir kombinasyonunu sunarak ruhunuzu dinlendiren ahenkli bir birleşim oluşturur. Gündelik hayatın koşturmasında gerçek bir huzur durağıdır.",
   //   },
   // },
   // {
   //   id: 5,
   //   name: {
   //     en: "'Golden Harvest' – Peru",
-  //     de: "'Golden Harvest' – Peru",
-  //     tr: "'Golden Harvest' – Peru",
+  //     ru: "'Golden Harvest' – Peru",
+  //     th: "'Golden Harvest' – Peru",
   //   },
   //   gr: 250,
   //   img: "https://res.cloudinary.com/djlyhp6vr/image/upload/v1694545733/pack04-removebg-preview_u2h0yj.png",
@@ -87,16 +87,16 @@ export const products: Product[] = [
   //   qty: 0,
   //   text: {
   //     en: "Delight in the golden treasures of the Peruvian coffee fields with our Golden Harvest blend. This medium-roast coffee features a smooth and balanced profile with subtle notes of caramel and nuts. It's a comforting and reliable choice for coffee enthusiasts.",
-  //     de: "Erfreuen Sie sich an den goldenen Schätzen der peruanischen Kaffeefelder mit unserer Golden Harvest. Dieser mittelstark geröstete Kaffee hat ein weiches und ausgewogenes Profil mit subtilen Noten von Karamell und Nüssen. Er ist eine angenehme und zuverlässige Wahl für Kaffeeliebhaber.",
-  //     tr: "Golden Harvest ile Peru kahve tarlalarının altın hazinelerinin keyfini çıkarın. Bu orta kavrulmuş kahve, hafif karamel ve fındık notaları içeren pürüzsüz ve dengeli bir profile sahiptir. Her türden kahve tutkunu için rahatlatıcı ve güvenilir bir seçimdir.",
+  //     ru: "Erfreuen Sie sich an den goldenen Schätzen der peruanischen Kaffeefelder mit unserer Golden Harvest. Dieser mittelstark geröstete Kaffee hat ein weiches und ausgewogenes Profil mit subtilen Noten von Karamell und Nüssen. Er ist eine angenehme und zuverlässige Wahl für Kaffeeliebhaber.",
+  //     th: "Golden Harvest ile Peru kahve tarlalarının altın hazinelerinin keyfini çıkarın. Bu orta kavrulmuş kahve, hafif karamel ve fındık notaları içeren pürüzsüz ve dengeli bir profile sahiptir. Her türden kahve tutkunu için rahatlatıcı ve güvenilir bir seçimdir.",
   //   },
   // },
   // {
   //   id: 6,
   //   name: {
   //     en: "'African Spice' – Kenya",
-  //     de: "'African Spice' – Kenia",
-  //     tr: "'African Spice' – Kenya",
+  //     ru: "'African Spice' – Kenia",
+  //     th: "'African Spice' – Kenya",
   //   },
   //   gr: 250,
   //   img: "https://res.cloudinary.com/djlyhp6vr/image/upload/v1694545733/pack05-removebg-preview_fr8r3s.png",
@@ -105,16 +105,16 @@ export const products: Product[] = [
   //   qty: 0,
   //   text: {
   //     en: "Experience the vibrant and spicy flavors of Africa with our African Spice blend, sourced exclusively from Kenya. This coffee boasts a lively acidity and bold flavors of black currant and spices. It's a true celebration of African coffee culture.",
-  //     de: "Erleben Sie die lebendigen und würzigen Aromen Afrikas mit unserer African Spice, die ausschließlich aus Kenia bezogen wird. Dieser Kaffee zeichnet sich durch eine lebendige Säure und kräftige Aromen von schwarzen Johannisbeeren und Gewürzen aus. Er ist eine wahre Feier der afrikanischen Kaffeekultur.",
-  //     tr: "Kenya'dan özel olarak elde edilen African Spice ile Afrika'nın canlı ve baharatlı lezzetlerini deneyimleyin. Bu kahve, canlı bir asiditeye ve siyah frenk üzümü ve baharatlardan oluşan cesur tatlara sahiptir. Bu kahve, Afrika kahve kültürünün gerçek bir temsilidir.",
+  //     ru: "Erleben Sie die lebendigen und würzigen Aromen Afrikas mit unserer African Spice, die ausschließlich aus Kenia bezogen wird. Dieser Kaffee zeichnet sich durch eine lebendige Säure und kräftige Aromen von schwarzen Johannisbeeren und Gewürzen aus. Er ist eine wahre Feier der afrikanischen Kaffeekultur.",
+  //     th: "Kenya'dan özel olarak elde edilen African Spice ile Afrika'nın canlı ve baharatlı lezzetlerini deneyimleyin. Bu kahve, canlı bir asiditeye ve siyah frenk üzümü ve baharatlardan oluşan cesur tatlara sahiptir. Bu kahve, Afrika kahve kültürünün gerçek bir temsilidir.",
   //   },
   // },
   // {
   //   id: 7,
   //   name: {
   //     en: "'Coffee-Co Legacy' – Blend",
-  //     de: "'Coffee-Co Legacy' – Mischung",
-  //     tr: "'Coffee-Co Legacy' – Harman",
+  //     ru: "'Coffee-Co Legacy' – Mischung",
+  //     th: "'Coffee-Co Legacy' – Harman",
   //   },
   //   gr: 300,
   //   img: "https://res.cloudinary.com/djlyhp6vr/image/upload/v1694545734/pack08-removebg-preview_qqdka3.png",
@@ -123,16 +123,16 @@ export const products: Product[] = [
   //   qty: 0,
   //   text: {
   //     en: "Our Coffee-Co Legacy blend is a carefully crafted masterpiece that brings together beans from various regions. This complex blend offers a well-rounded flavor profile with hints of chocolate, caramel, and a touch of citrus. It's a crowd-pleaser that caters to a wide range of coffee preferences.",
-  //     de: "Unsere Coffee-Co Legacy-Mischung ist ein sorgfältig hergestelltes Meisterwerk, das Bohnen aus verschiedenen Regionen zusammenbringt. Diese komplexe Mischung bietet ein abgerundetes Geschmacksprofil mit Noten von Schokolade, Karamell und einem Hauch von Zitrusfrüchten. Sie ist ein Publikumsliebling, der eine breite Palette von Kaffeevorlieben anspricht.",
-  //     tr: "Coffee-Co Legacy harmanımız, çeşitli bölgelerden gelen çekirdekleri bir araya getiren özenle hazırlanmış bir şaheserdir. Bu kahve karışımı, çikolata, karamel ve bir miktar narenciye dokunuşuyla çok yönlü bir lezzet profili sunar. Farklı kahve türlerini sevenlere hitap etmesiyle herkesi memnun edecek bir kahvedir.",
+  //     ru: "Unsere Coffee-Co Legacy-Mischung ist ein sorgfältig hergestelltes Meisterwerk, das Bohnen aus verschiedenen Regionen zusammenbringt. Diese komplexe Mischung bietet ein abgerundetes Geschmacksprofil mit Noten von Schokolade, Karamell und einem Hauch von Zitrusfrüchten. Sie ist ein Publikumsliebling, der eine breite Palette von Kaffeevorlieben anspricht.",
+  //     th: "Coffee-Co Legacy harmanımız, çeşitli bölgelerden gelen çekirdekleri bir araya getiren özenle hazırlanmış bir şaheserdir. Bu kahve karışımı, çikolata, karamel ve bir miktar narenciye dokunuşuyla çok yönlü bir lezzet profili sunar. Farklı kahve türlerini sevenlere hitap etmesiyle herkesi memnun edecek bir kahvedir.",
   //   },
   // },
   // {
   //   id: 8,
   //   name: {
   //     en: "'Coffee-Co Decaf' – Blend",
-  //     de: "'Coffee-Co Decaf' – Mischung",
-  //     tr: "'Coffee-Co Decaf' – Harman",
+  //     ru: "'Coffee-Co Decaf' – Mischung",
+  //     th: "'Coffee-Co Decaf' – Harman",
   //   },
   //   gr: 300,
   //   img: "https://res.cloudinary.com/djlyhp6vr/image/upload/v1694545734/pack07-removebg-preview_wiipkc.png",
@@ -141,8 +141,8 @@ export const products: Product[] = [
   //   qty: 0,
   //   text: {
   //     en: "For those who prefer to savor the rich taste of coffee without the caffeine, our Coffee-Co Decaf blend is the perfect choice. It retains the same exceptional flavor profile as our regular special blend, with the added benefit of being caffeine-free. Enjoy the warmth and comfort of coffee anytime, day or night, without the jolt.",
-  //     de: "Für alle, die den vollen Kaffeegeschmack ohne Koffein genießen möchten, ist unsere Coffee-Co Decaf-Mischung die perfekte Wahl. Sie hat das gleiche außergewöhnliche Geschmacksprofil wie unsere reguläre Spezialmischung, mit dem zusätzlichen Vorteil, dass sie koffeinfrei ist. Genießen Sie die Wärme und den Komfort von Kaffee zu jeder Tages- und Nachtzeit, ohne den Schock.",
-  //     tr: "Kahvenin zengin tadını kafeinsiz tatmayı tercih edenler için Coffee-Co Decaf mükemmel bir seçimdir. Standart özel harmanımızla aynı olağanüstü lezzet profilini korurken, kafein içermeme avantajını da sahiptir. Kahvenin sıcaklığının ve konforunun keyfini gece gündüz, istediğiniz zaman, sorunsuzca çıkarın.",
+  //     ru: "Für alle, die den vollen Kaffeegeschmack ohne Koffein genießen möchten, ist unsere Coffee-Co Decaf-Mischung die perfekte Wahl. Sie hat das gleiche außergewöhnliche Geschmacksprofil wie unsere reguläre Spezialmischung, mit dem zusätzlichen Vorteil, dass sie koffeinfrei ist. Genießen Sie die Wärme und den Komfort von Kaffee zu jeder Tages- und Nachtzeit, ohne den Schock.",
+  //     th: "Kahvenin zengin tadını kafeinsiz tatmayı tercih edenler için Coffee-Co Decaf mükemmel bir seçimdir. Standart özel harmanımızla aynı olağanüstü lezzet profilini korurken, kafein içermeme avantajını da sahiptir. Kahvenin sıcaklığının ve konforunun keyfini gece gündüz, istediğiniz zaman, sorunsuzca çıkarın.",
   //   },
   // },
 ];

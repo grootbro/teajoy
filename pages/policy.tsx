@@ -3,6 +3,7 @@ import fair from "@/public/assets/images/fair.png";
 import friendly from "@/public/assets/images/friendly.png";
 import fresh from "@/public/assets/images/fresh.png";
 import Image from "next/image";
+import Link from "next/link";
 import { LanguageContext } from "@/app/contexts/LanguageContext";
 import { useContext } from "react";
 
@@ -47,6 +48,17 @@ export default function Policy() {
         </div>
         <div className="text-center">
           <p>{text.closingText}</p>
+        </div>
+        <div className="flex justify-center mt-4">
+          <Link href="/shop">
+            <div
+              id="main-button"
+              className="border-[1px] border-neutral-700 rounded-xl items-center bg-neutral-50 dark:bg-stone-300 px-8
+                py-2 shadow-md hover:bg-green-100 transition-colors duration-300 text-lg active:text-neutral-400"
+            >
+              {text.shoppingButton}
+            </div>
+          </Link>
         </div>
       </div>
     </div>

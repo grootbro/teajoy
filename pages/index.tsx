@@ -118,7 +118,7 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-10 text-center ml-auto mr-auto md:w-2/3 mb-5 ">
-          <Image src={leaf} alt="Leaf" className="w-8 h-8 inline-block" />
+          <Image src={leaf} alt="Leaf" className="w-8 h-8 inline-block mr-2 -translate-y-1" />
           <p className="text-xl inline-block dark:text-orange-50">
             {text.policyText}
           </p>
@@ -134,7 +134,7 @@ export default function Home() {
           </Link>
         </div>
         <div className="text-center ml-auto mr-auto md:w-2/3 ">
-          <Image src={truck} alt="Leaf" className="w-8 h-8 inline-block" />
+          <Image src={truck} alt="Leaf" className="w-8 h-8 inline-block mr-2 -translate-y-1" />
           <p className="text-xl inline-block dark:text-orange-50">
             {text.shippingText}
           </p>

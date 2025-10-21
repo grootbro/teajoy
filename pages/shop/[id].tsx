@@ -1,7 +1,7 @@
-import { products } from "@/public/assets/data/Products";
 import { Product } from "@/app/types/index";
 import intenseIcon from "@/public/assets/images/intense-icon.png";
 import { BsArrowLeft } from "react-icons/bs";
+import { BsCart3 } from "react-icons/bs";
 import Image from "next/image";
 import Link from "next/link";
 import { CartContext } from "@/app/contexts/CartContext";
@@ -9,8 +9,11 @@ import { useContext, useEffect, useState } from "react";
 import { LanguageContext } from "@/app/contexts/LanguageContext";
 import { translations } from "@/app/utils/translations";
 import Head from "next/head";
+import Spinner from "@/app/components/Spinner";
 
-export default function ProductDetail({ product }: { product: Product }) {
+export default function ProductDetail({ product: initialProduct }: { product: Product | null }) {
+  const [product, setProduct] = useState<Product | null>(initialProduct);
+  const [loading, setLoading] = useState(!initialProduct);
   const [isInCart, setIsInCart] = useState(false);
   const { text, language } = useContext(LanguageContext);
   const cartContext = useContext(CartContext);
@@ -23,6 +26,7 @@ export default function ProductDetail({ product }: { product: Product }) {
 
   // CHECK IF PRODUCT IS IN CART WHEN PAGE IS RENDERED
   useEffect(() => {
+    if (!product) return;
     const cartItem = cart.find((item) => item.id === product.id);
 
     if (cartItem) {
@@ -32,7 +36,7 @@ export default function ProductDetail({ product }: { product: Product }) {
       setIsInCart(false);
       setQuantity(0);
     }
-  }, [cart, product.id]);
+  }, [cart, product]);
 
   // + BUTTON FUNCTION
   const handleAddToCart = (product: Product) => {
@@ -74,6 +78,14 @@ export default function ProductDetail({ product }: { product: Product }) {
     }
   };
 
+  if (loading || !product) {
+    return (
+      <div className="flex justify-center items-center">
+        <Spinner />
+      </div>
+    );
+  }
+
   return (
     <>
     <Head>
@@ -89,18 +101,18 @@ export default function ProductDetail({ product }: { product: Product }) {
       bg-gradient-to-br from-stone-50 to-stone-100 dark:from-stone-300 dark:to-stone-400 
       rounded-xl shadow-xl px-4 py-8 md:p-8 border-stone-300 border-[1px] gap-6 md:gap-0"
       >
-        <div className="md:w-2/6 m-auto relative overflow-hidden">
+        <div className="md:w-2/6 m-auto relative overflow-hidden flex items-center justify-center">
           <Image
             src={product.img}
-            alt={product.name[language]}
+            alt={product.name.en}
             width={200}
             height={250}
-            className="mr-auto ml-auto w-44 h-72 duration-500 
+            className="mr-auto ml-auto w-44 h-72 object-contain duration-500
                 hover:scale-105 transition-[transform]"
           />
         </div>
         <div className="pl-4 md:w-4/6 text-lg md:mt-8 mt:0 md:text-left text-center">
-          <h1 className="text-2xl font-semibold">{product.name[language]}</h1>
+          <h1 className="text-2xl font-semibold">{product.name.en}</h1>
           <div className="mt-2">
             {Array.from({ length: product.int }, (_, index) => (
               <Image
@@ -122,7 +134,7 @@ export default function ProductDetail({ product }: { product: Product }) {
           <p>{product.text[language]}</p>
           <br />
           {isInCart ? (
-            <div className="flex flex-row gap-2 ">
+            <div className="flex flex-row gap-2 items-center">
               <div
                 className="bg-white rounded-xl shadow-md px-3 text-xl cursor-pointer
                        active:text-neutral-400 transition-transform duration-200"
@@ -138,9 +150,14 @@ export default function ProductDetail({ product }: { product: Product }) {
               >
                 <p>+</p>
               </div>
-              <div className="italic text-md text-neutral-500 dark:text-neutral-100">
-                {cartStatus}
-              </div>
+              <Link href="/cart" className="ml-2">
+                <BsCart3 className={`w-6 h-6 text-lime-700 dark:text-lime-300 hover:scale-110 transition-all duration-200 cursor-pointer ${cartStatus ? 'animate-bounce' : ''}`} />
+              </Link>
+              {cartStatus && (
+                <div className="italic text-md text-neutral-500 dark:text-neutral-100 ml-1">
+                  {cartStatus}
+                </div>
+              )}
             </div>
           ) : (
             <div
@@ -172,20 +189,82 @@ export default function ProductDetail({ product }: { product: Product }) {
 
 // GET ID NUMBER FROM PARAM
 export async function getStaticPaths() {
-  const paths = products.map((product) => ({
-    params: { id: product.id.toString() },
-  }));
+  try {
+    const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://spacefox:goodwin2025@localhost:27017/teajoy?authSource=admin';
+    const mongoose = require('mongoose');
 
-  return { paths, fallback: false };
+    await mongoose.connect(MONGODB_URI);
+
+    const ProductSchema = new mongoose.Schema({
+      id: Number,
+      active: Boolean
+    });
+
+    const Product = mongoose.models.Product || mongoose.model('Product', ProductSchema);
+    const products = await Product.find({ active: true }, 'id');
+
+    const paths = products.map((product: any) => ({
+      params: { id: product.id.toString() },
+    }));
+
+    await mongoose.connection.close();
+
+    return { paths, fallback: 'blocking' };
+  } catch (error) {
+    console.error('Error in getStaticPaths:', error);
+    return { paths: [], fallback: 'blocking' };
+  }
 }
 
 export async function getStaticProps({ params }: { params: { id: string } }) {
-  const productId = params.id;
-  const product = products.find((p) => p.id.toString() === productId);
+  try {
+    const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://spacefox:goodwin2025@localhost:27017/teajoy?authSource=admin';
+    const mongoose = require('mongoose');
 
-  return {
-    props: {
-      product,
-    },
-  };
+    await mongoose.connect(MONGODB_URI);
+
+    const ProductSchema = new mongoose.Schema({
+      id: Number,
+      name: {
+        en: String,
+        ru: String,
+        th: String
+      },
+      gr: Number,
+      img: String,
+      price: Number,
+      int: Number,
+      qty: Number,
+      text: {
+        en: String,
+        ru: String,
+        th: String
+      },
+      active: Boolean
+    });
+
+    const Product = mongoose.models.Product || mongoose.model('Product', ProductSchema);
+    const productId = parseInt(params.id);
+    const product = await Product.findOne({ id: productId, active: true }).lean();
+
+    await mongoose.connection.close();
+
+    if (!product) {
+      return {
+        notFound: true,
+      };
+    }
+
+    return {
+      props: {
+        product: JSON.parse(JSON.stringify(product)),
+      },
+      revalidate: 60
+    };
+  } catch (error) {
+    console.error('Error in getStaticProps:', error);
+    return {
+      notFound: true,
+    };
+  }
 }

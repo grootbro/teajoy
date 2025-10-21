@@ -2,8 +2,8 @@ export interface Product {
   id: number;
   name: {
     en: string;
-    de: string;
-    tr: string;
+    ru: string;
+    th: string;
   };
   gr: number;
   img: string;
@@ -11,8 +11,8 @@ export interface Product {
   int: number;
   text: {
     en: string;
-    de: string;
-    tr: string;
+    ru: string;
+    th: string;
   };
   qty: number;
 }
@@ -28,4 +28,4 @@ export interface CartContextType {
   clearCart: () => void;
 }
 
-export type Language = "en" | "de" | "tr";
+export type Language = "en" | "ru" | "th";
