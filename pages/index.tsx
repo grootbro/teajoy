@@ -28,7 +28,7 @@ export default function Home() {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="TeaJoy - Premium Tea Collection" />
         <meta property="og:description" content="Discover premium organic teas from around the world. High-quality tea blends, fruit infusions, and herbal teas." />
-        <meta property="og:image" content="https://res.cloudinary.com/dov6nv91n/image/upload/v1725063333/cougsirqq9yhcqog2jel.png" />
+        <meta property="og:image" content="https://teajoy.shop/assets/images/teajoy.webp" />
         <meta property="og:url" content="https://teajoy.shop" />
         <meta property="og:site_name" content="TeaJoy" />
 
@@ -36,7 +36,7 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="TeaJoy - Premium Tea Collection" />
         <meta name="twitter:description" content="Discover premium organic teas from around the world. High-quality tea blends, fruit infusions, and herbal teas." />
-        <meta name="twitter:image" content="https://res.cloudinary.com/dov6nv91n/image/upload/v1725063333/cougsirqq9yhcqog2jel.png" />
+        <meta name="twitter:image" content="https://teajoy.shop/assets/images/teajoy.webp" />
 
         {/* Structured Data */}
         <script type="application/ld+json">
@@ -46,8 +46,8 @@ export default function Home() {
             "name": "TeaJoy",
             "description": "Premium organic tea shop offering high-quality tea blends from around the world",
             "url": "https://teajoy.shop",
-            "logo": "https://res.cloudinary.com/dov6nv91n/image/upload/v1725063333/cougsirqq9yhcqog2jel.png",
-            "image": "https://res.cloudinary.com/dov6nv91n/image/upload/v1725063333/cougsirqq9yhcqog2jel.png"
+            "logo": "https://teajoy.shop/assets/images/teajoy.webp",
+            "image": "https://teajoy.shop/assets/images/teajoy.webp"
           })}
         </script>
       </Head>

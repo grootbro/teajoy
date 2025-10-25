@@ -65,14 +65,14 @@ export default function Shop({}) {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Shop Premium Tea Collection | TeaJoy" />
         <meta property="og:description" content="Browse our complete collection of premium organic teas. Shop fruit infusions, herbal blends, and specialty teas." />
-        <meta property="og:image" content="https://res.cloudinary.com/dov6nv91n/image/upload/v1725063333/cougsirqq9yhcqog2jel.png" />
+        <meta property="og:image" content="https://teajoy.shop/assets/images/teajoy.webp" />
         <meta property="og:url" content="https://teajoy.shop/shop" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Shop Premium Tea Collection | TeaJoy" />
         <meta name="twitter:description" content="Browse our complete collection of premium organic teas." />
-        <meta name="twitter:image" content="https://res.cloudinary.com/dov6nv91n/image/upload/v1725063333/cougsirqq9yhcqog2jel.png" />
+        <meta name="twitter:image" content="https://teajoy.shop/assets/images/teajoy.webp" />
 
         {/* Structured Data */}
         <script type="application/ld+json">

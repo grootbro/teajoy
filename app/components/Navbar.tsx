@@ -151,7 +151,7 @@ export default function Navbar() {
             {/* THEME AND LANGUAGE SWITCHERS (Mobile: horizontal at bottom, Desktop: normal) */}
             <div className="flex flex-row gap-4 items-center md:contents order-last md:order-none mt-3 md:mt-0">
               {/* LANGUAGE */}
-              <div className="language-dropdown flex items-center md:order-1 md:mb-0.5">
+              <div className="language-dropdown flex items-center md:order-1">
                 <div className="selected-language flex items-center" onClick={toggleDropdown}>
                   <img
                     src={flag}
@@ -197,7 +197,7 @@ export default function Navbar() {
                 )}
               </div>
               {/* DARK MODE */}
-              <div className="md:order-7 md:ml-4">
+              <div className="md:order-7 md:ml-4 md:-translate-y-1">
                 {isDark ? (
                   <HiSun
                     alt="Sun"
@@ -243,7 +243,7 @@ export default function Navbar() {
               </Link>
               <hr className="border-1 border-lime-900 dark:border-lime-200 md:border-0 mt-1" />
             </div>
-            <div className="md:order-6 order-4">
+            <div className="md:order-6 order-4 md:-translate-y-0.5">
               {isCartEmpty ? (
                 <Link
                   href="/cart"
