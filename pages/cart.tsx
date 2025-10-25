@@ -1,5 +1,6 @@
 import "tailwindcss/tailwind.css";
 import Image from "next/image";
+import Head from "next/head";
 import { Product } from "@/app/types";
 import { CartContext } from "@/app/contexts/CartContext";
 import { useContext, useState } from "react";
@@ -28,7 +29,15 @@ export default function CartPage() {
   const total = subtotal + shippingFee;
 
   return (
-    <div className="text-lg">
+    <div>
+      <Head>
+        <title>Shopping Cart | TeaJoy</title>
+        <meta name="description" content="Review your tea selections and proceed to checkout. Secure shopping cart for TeaJoy premium teas." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/icon.png" type="image/png" />
+        <meta name="robots" content="noindex, nofollow" />
+      </Head>
+      <div className="text-lg">
       {isCartEmpty ? (
         <div className="flex flex-col gap-6 items-center justify-center mx-auto mt-10 mb-10 min-h-[50vh]">
           <p className="text-xl dark:text-orange-50">{text.cartEmpty}</p>
@@ -207,6 +216,7 @@ export default function CartPage() {
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 }

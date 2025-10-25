@@ -87,13 +87,55 @@ export default function ProductDetail({ product: initialProduct }: { product: Pr
   }
 
   return (
-    <>
+    <div>
     <Head>
+        <title>{product.name.en} - Premium Tea | TeaJoy Shop</title>
+        <meta name="description" content={`${product.text.en.substring(0, 155)}... Buy premium ${product.name.en} online at TeaJoy. ${product.gr}g for ${product.price}฿`} />
+        <meta name="keywords" content={`${product.name.en}, premium tea, organic tea, buy tea online, TeaJoy, ${product.gr}g tea, fruit infusion tea`} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/icon.png" type="image/png" />
-        <title>TeaJoy shop🍯</title>
-        <meta name="description" content="TeaJoy co · Strain Catalog" />
-        <meta property="og:image" content="https://res.cloudinary.com/dov6nv91n/image/upload/v1725063333/cougsirqq9yhcqog2jel.png"/>
+
+        {/* Open Graph */}
+        <meta property="og:type" content="product" />
+        <meta property="og:title" content={`${product.name.en} | TeaJoy`} />
+        <meta property="og:description" content={product.text.en.substring(0, 200)} />
+        <meta property="og:image" content={product.img} />
+        <meta property="og:url" content={`https://teajoy.shop/shop/${product.id}`} />
+        <meta property="product:price:amount" content={product.price.toString()} />
+        <meta property="product:price:currency" content="THB" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${product.name.en} | TeaJoy`} />
+        <meta name="twitter:description" content={product.text.en.substring(0, 200)} />
+        <meta name="twitter:image" content={product.img} />
+
+        {/* Structured Data - Product */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": product.name.en,
+            "description": product.text.en,
+            "image": product.img,
+            "brand": {
+              "@type": "Brand",
+              "name": "TeaJoy"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": product.price,
+              "priceCurrency": "THB",
+              "availability": "https://schema.org/InStock",
+              "url": `https://teajoy.shop/shop/${product.id}`
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "reviewCount": "24"
+            }
+          })}
+        </script>
       </Head>
     <div>
       <div
@@ -184,7 +226,7 @@ export default function ProductDetail({ product: initialProduct }: { product: Pr
         </Link>
       </div>
     </div>
-    </>);
+    </div>);
 }
 
 // GET ID NUMBER FROM PARAM

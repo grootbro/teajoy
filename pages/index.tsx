@@ -8,6 +8,7 @@ import beans03 from "@/public/assets/images/beans03.png";
 import leaf from "@/public/assets/images/leaf2.png";
 import truck from "@/public/assets/images/truck01.png";
 import Link from "next/link";
+import Head from "next/head";
 import { LanguageContext } from "@/app/contexts/LanguageContext";
 import { useContext } from "react";
 
@@ -16,6 +17,40 @@ export default function Home() {
 
   return (
     <div>
+      <Head>
+        <title>TeaJoy - Premium Tea Collection | Organic & Natural Teas</title>
+        <meta name="description" content="Discover TeaJoy's premium collection of organic teas. High-quality tea blends from around the world including fruit infusions, herbal teas, and specialty blends. Free shipping available." />
+        <meta name="keywords" content="premium tea, organic tea, fruit infusion tea, herbal tea, specialty tea, TeaJoy, natural tea, tea shop, buy tea online" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/icon.png" type="image/png" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="TeaJoy - Premium Tea Collection" />
+        <meta property="og:description" content="Discover premium organic teas from around the world. High-quality tea blends, fruit infusions, and herbal teas." />
+        <meta property="og:image" content="https://res.cloudinary.com/dov6nv91n/image/upload/v1725063333/cougsirqq9yhcqog2jel.png" />
+        <meta property="og:url" content="https://teajoy.shop" />
+        <meta property="og:site_name" content="TeaJoy" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="TeaJoy - Premium Tea Collection" />
+        <meta name="twitter:description" content="Discover premium organic teas from around the world. High-quality tea blends, fruit infusions, and herbal teas." />
+        <meta name="twitter:image" content="https://res.cloudinary.com/dov6nv91n/image/upload/v1725063333/cougsirqq9yhcqog2jel.png" />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Store",
+            "name": "TeaJoy",
+            "description": "Premium organic tea shop offering high-quality tea blends from around the world",
+            "url": "https://teajoy.shop",
+            "logo": "https://res.cloudinary.com/dov6nv91n/image/upload/v1725063333/cougsirqq9yhcqog2jel.png",
+            "image": "https://res.cloudinary.com/dov6nv91n/image/upload/v1725063333/cougsirqq9yhcqog2jel.png"
+          })}
+        </script>
+      </Head>
       <div className="flex flex-col gap-16">
         <div className="flex flex-col md:flex-row gap-10">
           <div className="flex flex-col gap-5 md:w-5/12">

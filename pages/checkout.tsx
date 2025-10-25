@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
 import "tailwindcss/tailwind.css";
+import Head from "next/head";
 import confirm from "@/public/assets/images/confirm.png";
 import { BsArrowLeft } from "react-icons/bs";
 import Image from "next/image";
@@ -158,7 +159,15 @@ export default function Checkout() {
   }, [fullName, eMail, address, phoneNumber]);
 
   return (
-    <div className="text-lg dark:text-orange-50 pb-10">
+    <div>
+      <Head>
+        <title>Checkout | TeaJoy</title>
+        <meta name="description" content="Complete your order. Secure checkout for TeaJoy premium teas with worldwide shipping." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/icon.png" type="image/png" />
+        <meta name="robots" content="noindex, nofollow" />
+      </Head>
+      <div className="text-lg dark:text-orange-50 pb-10">
       {showCheckout ? (
         <form onSubmit={handleClick} className="flex flex-col gap-6 items-center mx-auto mt-10">
           <div className="text-xl">
@@ -270,6 +279,7 @@ export default function Checkout() {
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 }
